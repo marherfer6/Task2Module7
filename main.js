@@ -99,8 +99,8 @@ function appendLineCharts()
     .data(totalSales)
     .enter().append("circle")
     .attr("r", 3.5)
-    .attr("cx", function(d) { return setupYScale(d.month); })
-    .attr("cy", function(d) { return setupYScale(d.sales); })
+    .attr("cx", function(d) { return x(d.month); })
+    .attr("cy", function(d) {  return y(d.sales); })
     .on("mouseover", function(d) {		
         div.transition()		
             .duration(200)		
@@ -109,10 +109,10 @@ function appendLineCharts()
             //.style("left", (d3.event.pageX) + "px")		
             //.style("top", (d3.event.pageY - 28) + "px");	
         })					
-    .on("mouseout", function(d) {		
+        .on("mouseout", function(d) {		
         div.transition()		
-            .duration(500)		
-            .style("opacity", 0);	
+        .duration(500)		
+        .style("opacity", 0);	
     });
 
 }

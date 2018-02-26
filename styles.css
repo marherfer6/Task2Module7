@@ -1,0 +1,22 @@
+.axis text {
+    font: 10px sans-serif;
+  }
+  
+  .axis path,
+  .axis line {
+    fill: none;
+    stroke: #000;
+    shape-rendering: crispEdges;
+  }
+  
+  .line {
+  fill: none;
+  stroke: steelblue;
+  stroke-width: 2px;
+  }
+
+  .dot {
+    fill: rgb(151, 180, 70);
+    stroke: rgb(151, 180, 70);;
+    stroke-width: 1.5px;
+  }

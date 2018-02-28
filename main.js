@@ -46,7 +46,7 @@ function setupXScale()
 
   x = d3.scaleTime()
       .range([0, width])
-      .domain(d3.extent(totalSales, function(d) { return d.month}));
+      .domain(d3.extent(totalSales, function(d) { return d.date}));
 }
 
 // Now we don't have a linear range of values, we have a discrete
@@ -86,7 +86,7 @@ function appendLineCharts()
 {
   // define the line
   var valueline = d3.line()
-                    .x(function(d) { return x(d.month); })
+                    .x(function(d) { return x(d.date); })
                     .y(function(d) { return y(d.sales); });
 
   // Add the valueline path.
@@ -99,15 +99,14 @@ function appendLineCharts()
     .data(totalSales)
     .enter().append("circle")
     .attr("r", 3.5)
-    .attr("cx", function(d) { return x(d.month); })
+    .attr("cx", function(d) { return x(d.date); })
     .attr("cy", function(d) {  return y(d.sales); })
     .on("mouseover", function(d) {		
         div.transition()		
-            .duration(200)		
+            .duration(200)
+            .attr("class","datos")			
             .style("opacity", .9);		
-        div	.html((d.month) + "<br/>"  + d.sales)	
-            //.style("left", (d3.event.pageX) + "px")		
-            //.style("top", (d3.event.pageY - 28) + "px");	
+        div	.html("Date: " + d.date.getDate() + "/" + (d.date.getMonth()+1) + "/" + d.date.getFullYear() + "<br/>" + "Sales: "  + d.sales)		
         })					
         .on("mouseout", function(d) {		
         div.transition()		

@@ -16,7 +16,15 @@
   }
 
   .dot {
-    fill: rgb(151, 180, 70);
-    stroke: rgb(151, 180, 70);;
+    fill: black;
+    stroke: black;
     stroke-width: 1.5px;
+  }
+
+  .datos {
+    background-color: lightblue;
+    width: 500px;
+    padding: 15px;
+    margin-top: 25px;
+    border-radius: 10px;
   }

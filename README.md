@@ -170,7 +170,7 @@ function appendLineCharts()
 
 - Finally, it´s time to define the styles
 
-_styles.css_
+_./styles.css_
 
 ```css
 .axis text {

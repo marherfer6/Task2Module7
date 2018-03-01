@@ -1,8 +1,5 @@
 // Let's start using ES6
-// And let's organize the code following clean code concepts
 // Later one we will complete a version using imports + webpack
-
-// Isolated data array to a different file
 
 let margin = null,
     width = null,
@@ -20,13 +17,15 @@ appendYAxis();
 appendLineCharts();
 
 
+// Let's calculate the size of the new chart and add some margins
 
-// 1. let's start by selecting the SVG Node
 function setupCanvasSize() {
   margin = {top: 20, left: 80, bottom: 20, right: 30};
   width = 960 - margin.left - margin.right;
   height = 520 - margin.top - margin.bottom;
 }
+
+// Let's add the SVG element with the given new width and height, and translate the origins applying the margins.
 
 function appendSvg(domElement) {
   svg = d3.select(domElement).append("svg")
@@ -84,7 +83,7 @@ var div = d3.select("body").append("div")
 
 function appendLineCharts()
 {
-  // define the line
+  // Define the line
   var valueline = d3.line()
                     .x(function(d) { return x(d.date); })
                     .y(function(d) { return y(d.sales); });
